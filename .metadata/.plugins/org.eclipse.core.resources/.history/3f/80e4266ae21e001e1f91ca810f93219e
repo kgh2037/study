@@ -1,0 +1,6 @@
+package poll;
+
+@WebServlet("/voteSave")
+public class VoteSave {
+
+}

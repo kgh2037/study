@@ -1,0 +1,94 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@page import="java.sql.*"%>
+<%@page import="com.DbConnect"%>
+    
+<%
+Connection connect = DbConnect.oracleCon();
+
+String sql2 = "select sdate, edate from pollmain";
+Statement stmt = connect.createStatement();
+ResultSet rs2 = stmt.executeQuery(sql2);
+
+String sdate = rs2.getString("sdate");
+String edate = rs2.getString("edate");
+	
+	if(sdate == edate){
+	String where = "sdate <= sysdate or edate >= sysdate and use = 'Y' order by code desc";
+	} else {
+	String where = "sdate <= sysdate and edate >= sysdate and use = 'Y' order by code desc";
+	}
+
+
+String sql = "select code, title from pollmain where '"+where+"'";
+ResultSet rs = stmt.executeQuery(sql);
+/* String sql = "select code, title from pollmain where sdate <= sysdate and edate >= sysdate "
+				+ "and use = 'Y' order by code desc";
+ResultSet rs = stmt.executeQuery(sql); */
+%>    
+
+<%=sql  %>
+<%=rs  %>
+    
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>main</title>
+</head>
+
+<script>
+	function fn_popup1(code) {
+		var url = "pollEnter.jsp?code="+code;
+		window.open(url,"응모화면","width=400,height=300");
+	}
+	function fn_popup2(code) {
+		var url = "pollResult.jsp?code="+code;
+		window.open(url,"결과화면","width=400,height=300");
+	}
+</script>
+
+<style>
+body {
+	font-size : 16px;
+	font-family : 맑은고딕;
+	line-height : 2.0;
+}
+.table1 {
+	width : 700px;
+	border : 1px solid #ccc;
+	border-collapse : collapse; /*cell간격*/
+}
+.table1 th,td {
+	padding : 5px;
+	border : 1px solid #ccc;
+	height : 45px;	
+}
+</style>
+<body>
+	<table class = "table1">
+		<tr align = "center">
+			<th>설문</th>
+		</tr>
+		<% 
+		int cnt=0;
+		while(rs.next()) {
+			String code = rs.getString("code");
+			String title = rs.getString("title");
+		cnt++;
+		%>
+	 <tr align="center">
+	      <td width="10%"><%=cnt %></td> 
+	      <td align="left"><%=title %></td>
+	      <td width="27%">
+	         <button type="button" onclick="fn_popup1('<%=code %>')">응모</button>
+	         <button type="button" onclick="fn_popup2('<%=code %>')">결과</button>
+	      </td>
+	   </tr>
+		<%
+		}
+		%>
+	</table>
+
+</body>
+</html>

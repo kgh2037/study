@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
+		<item key="wrap" value="true"/>
+		<item key="casesensitive" value="false"/>
+		<item key="wholeword" value="false"/>
+		<item key="incremental" value="false"/>
+		<item key="isRegEx" value="false"/>
+		<item key="selection" value="hide"/>
+		<list key="findhistory">
+			<item value="view1"/>
+			<item value="post1"/>
+			<item value="con"/>
+			<item value="board"/>
+			<item value="list"/>
+			<item value="&#x09;}"/>
+			<item value="sex"/>
+			<item value="board1"/>
+			<item value="loc"/>
+			<item value="dname"/>
+			<item value="deptno"/>
+			<item value="자바스크립트&lt;br&gt;"/>
+			<item value="delete"/>
+			<item value="&#x09;&#x09;&#x09;int rank = rs2.getString(&quot;name = 김건호&quot;);"/>
+			<item value="equal"/>
+		</list>
+		<list key="replacehistory">
+			<item value="hide"/>
+			<item value="post"/>
+			<item value="connection"/>
+			<item value=""/>
+			<item value="del"/>
+			<item value="reBoard"/>
+			<item value="reboard"/>
+			<item value="content"/>
+			<item value="title"/>
+			<item value="unq"/>
+			<item value="scanner"/>
+			<item value="rs"/>
+			<item value="sql"/>
+			<item value="fixData"/>
+			<item value="sameData"/>
+		</list>
+	</section>
+	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">
+		<item key="DIALOG_X_ORIGIN" value="30"/>
+		<item key="DIALOG_Y_ORIGIN" value="387"/>
+		<item key="DIALOG_WIDTH" value="319"/>
+		<item key="DIALOG_HEIGHT" value="370"/>
+		<item key="DIALOG_FONT_NAME" value="1|맑은 고딕|9.0|0|WINDOWS|1|-24|0|0|0|400|0|0|0|1|0|0|0|0|맑은 고딕"/>
+	</section>
+	<section name="org.eclipse.ui.texteditor.GotoLineAction$GotoLineDialog_dialogBounds">
+		<item key="DIALOG_X_ORIGIN" value="404"/>
+		<item key="DIALOG_Y_ORIGIN" value="252"/>
+	</section>
+</section>

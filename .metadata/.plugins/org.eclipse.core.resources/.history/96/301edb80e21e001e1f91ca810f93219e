@@ -1,0 +1,8 @@
+package poll;
+
+import javax.servlet.annotation.WebServlet;
+
+@WebServlet("/voteSave")
+public class VoteSave {
+
+}
